@@ -1,11 +1,15 @@
 var button = document.getElementsByClassName("btn")[0];
-var key = document.querySelector('input[name="cardTitle"]').value;
-var value = document.querySelector('input[name="cardContent"]').value;
 
+button.addEventListener("click", () => {
+    var key = document.querySelector('input[name="cardTitle"]').value;
+    var val = document.querySelector('input[name="cardContent"]').value;
+    localStorage.setItem(key, val);
 
-button.addEventListener("click", ()=>{
-    localStorage.setItem(key, value);
-
-    console.log("Card Title: " + key);
-        console.log("Card Content: " + value);
+    console.log("Notes Title: " + key);
+    console.log("Notes Content: " + val);
 })
+
+let c = confirm("Do you want to delete the node");
+if(c){
+    localStorage.removeItem("note");
+}
