@@ -7,9 +7,10 @@ button.addEventListener("click", () => {
 
     console.log("Notes Title: " + key);
     console.log("Notes Content: " + val);
+
+    let c = confirm("Do you want to delete the node");
+if(c){
+    localStorage.removeItem(key);
+}
 })
 
-let c = confirm("Do you want to delete the node");
-if(c){
-    localStorage.removeItem("note");
-}
